@@ -1,0 +1,7 @@
+<apex:page standardController="Contact">
+    <apex:pageBlock >
+        Contact's First Name: {! Contact.FirstName}<br/>
+        Contact's Last Name: {! Contact.LastName}<br/>
+        Contact's Owner: {! Contact.Owner.Email}
+    </apex:pageBlock>
+</apex:page>

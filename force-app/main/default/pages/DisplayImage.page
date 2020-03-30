@@ -1,0 +1,3 @@
+<apex:page showHeader="false">
+    <apex:image id="SF_Logo" value="https://developer.salesforce.com/files/salesforce-developer-network-logo.png" alt="Blue clould labels Salesforce"/>
+</apex:page>
