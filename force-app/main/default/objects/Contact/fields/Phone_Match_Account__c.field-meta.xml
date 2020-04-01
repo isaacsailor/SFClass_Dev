@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Match_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked, Contact&#39;s phone number will be auto-filled with the related Account&#39;s, if it exists.</description>
+    <externalId>false</externalId>
+    <label>Phone # same as account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

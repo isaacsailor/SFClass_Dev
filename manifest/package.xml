@@ -3,6 +3,8 @@
     <types>
         <members>Opportunity</members>
         <members>Account</members>
+        <members>Contact</members>
+        <members>User</members>
         <name>CustomObject</name>
     </types>
     <types>
