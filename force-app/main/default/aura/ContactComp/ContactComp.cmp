@@ -1,0 +1,35 @@
+<aura:component controller="CaseCompPageController" implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:attribute name="contactList" type="Contact[]"/>
+    
+    <aura:method name="contEventCatcher" action="{!c.handleSelectionChange}">
+        <aura:attribute name="selectThisCont" type="Contact"/>
+    </aura:method>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.doInIt }" />
+    
+    <lightning:card title="Related Contacts">
+        
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Contact Name">Contact Name</div>
+                    </th>
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Contact Email">Email</div>
+                    </th>
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>       
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Child component used to handle each table record--> 
+                
+                <aura:iteration items="{! v.contactList }" var="contactRec">
+                    <c:ContactTableRow contact="{!contactRec}" aura:id="contRow"/>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </lightning:card>
+</aura:component>

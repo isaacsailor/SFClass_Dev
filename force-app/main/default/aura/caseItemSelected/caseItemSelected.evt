@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Send Account and Contact IDs related to selected Case item">
+    <aura:attribute name="acctId" type="Account"/>
+    <aura:attribute name="contId" type="Contact"/>
+</aura:event>

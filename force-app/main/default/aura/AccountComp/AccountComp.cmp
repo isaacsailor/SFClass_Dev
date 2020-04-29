@@ -1,0 +1,35 @@
+<aura:component controller="CaseCompPageController" implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:attribute name="accountList" type="Account[]"/>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.doInIt }" />
+    
+    <aura:method name="acctEventCatcher" action="{!c.handleSelectionChange}">
+            <aura:attribute name="selectThisAcct" type="Account.Id"/>
+        </aura:method>
+    
+    <lightning:card title="Related Accounts">
+        
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Account Email">Account Email</div>
+                    </th>
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>       
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Child component used to handle each table record--> 
+                
+                <aura:iteration items="{! v.accountList }" var="accountRec">
+                    <c:AccountTableRow account="{!accountRec}" aura:id="acctRow"/>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </lightning:card>
+</aura:component>

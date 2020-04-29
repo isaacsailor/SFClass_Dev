@@ -1,0 +1,21 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="contact" type="Contact" />
+    <aura:attribute name="selectedState" type="Boolean" default="false" access="PRIVATE"/>
+    
+    <aura:handler event="force:navigateToSObject" action="{!c.contRowClick}"/>
+    <aura:method name="eventCatcher" action="{!c.handleSelectionChange}">
+        <aura:attribute name="selectThisCont" type="Contact"/>
+    </aura:method>
+    <!--{!v.selectedState ? 'slds-is-selected':'slds-hint-parent'}-->
+    <tr class="slds-hint-parent" aura:id="contRow" onclick="{!c.contRowClick}">
+        <td data-label="{!v.contact.Name}" scope="row">
+            <div class="slds-truncate" title="{!v.contact.Name}">{!v.contact.Name}</div>
+        </td>
+        <td data-label="{!v.contact.Email}">
+            <div class="slds-truncate" title="{!v.contact.Email}">{!v.contact.Email}</div>
+        </td>
+        <td data-label="{!v.contact.Phone}">
+            <div class="slds-truncate" title="{!v.contact.Phone}">{!v.contact.Phone}</div>
+        </td>
+    </tr>
+</aura:component>

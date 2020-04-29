@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="account" type="Account" />
+    <aura:attribute name="selectedState" type="Boolean" default="false" access="PRIVATE"/>
+    
+    <aura:method name="eventCatcher" action="{!c.handleSelectionChange}">
+        <aura:attribute name="selectThisAcct" type="Account.Id"/>
+    </aura:method>
+    <!--{(!v.selectedState == true)? 'row-selected':'slds-hint-parent'}-->
+    <tr class="slds-hint-parent" aura:id="acctRow">
+        <td data-label="{!v.account.Name}">
+            <div class="slds-truncate" title="{!v.account.Name}">{!v.account.Name}</div>
+        </td>
+        <td data-label="{!v.account.Email__c}">
+            <div class="slds-truncate" title="{!v.account.Email__c}">{!v.account.Email__c}</div>
+        </td>
+        <td data-label="{!v.account.Phone}">
+            <div class="slds-truncate" title="{!v.account.Phone}">{!v.account.Phone}</div>
+        </td>
+    </tr>
+</aura:component>

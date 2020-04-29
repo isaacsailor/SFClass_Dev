@@ -1,0 +1,11 @@
+.THIS #app-container{
+    columns: 2;
+}
+.THIS #controlComp{
+    float: left;
+    width: 50
+}
+.THIS #responseComp{
+    rows: 2;
+    float: right;
+}
